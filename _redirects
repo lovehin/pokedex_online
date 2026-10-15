@@ -1,0 +1,13 @@
+# Cloudflare 跳转规则
+#
+# ⚠️ 不要写 "/xxx → /xxx.html" 这类规则！
+# Cloudflare 会自动把 /xxx.html 归一成 /xxx，两边互相指就会无限重定向，
+# 表现为「重定向次数过多」打不开页面。
+# 无后缀地址（/pokemon/pikachu、/moves/thunderbolt）会自动对应同名 .html，不用手写规则。
+
+# 栏目根地址（/pokemon 这类）统一带结尾斜杠：Cloudflare 的 auto-trailing-slash
+# 本来就会把不带斜杠的 307 过来，直接写带斜杠的形态省一次跳转，也和 canonical 一致。
+# 顺手记住的别名
+/index.html      /    301
+/dex             /pokemon/  301
+/skill           /moves/    301

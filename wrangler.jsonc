@@ -1,0 +1,27 @@
+{
+  // Cloudflare Workers 部署配置
+  //
+  // ⚠️ name 要填**你自己的** Worker 名，别照抄别的仓库：写错不会报错，
+  //    只会默默传到另一个新 Worker 上，你的页面永远不变。
+  // 双击 scripts/重新上线.command 会先重新生成页面，再上传本目录。
+  "name": "pokedex-online",
+  "compatibility_date": "2026-09-28",
+
+  "assets": {
+    "directory": ".",
+    // 无后缀地址（/pokemon/pikachu、/moves/thunderbolt）自动对应同名 .html
+    "html_handling": "auto-trailing-slash",
+    "not_found_handling": "404-page"
+  }
+
+  // 自定义域（可选）。把你自己的域名填进来，第一次部署时 Cloudflare 会自动建好
+  // DNS 记录和证书。不需要自定义域就把整段注释掉，wrangler 会问你要不要用
+  // workers.dev 地址。
+  //
+  // ⚠️ 别照抄别的仓库里的 pattern：域名不在你的 Cloudflare 账号里会失败。
+  // ⚠️ 在 Cloudflare 上删掉自定义域，会连带删掉随它创建的 DNS 记录。
+  //
+  // "routes": [
+  //   { "pattern": "你的域名.example.com", "custom_domain": true }
+  // ]
+}

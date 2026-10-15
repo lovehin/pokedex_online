@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="究极宝可梦图鉴">
+  <circle cx="32" cy="32" r="29" fill="#fff" stroke="#16233c" stroke-width="4"/>
+  <path d="M3 32a29 29 0 0 1 58 0z" fill="#e8453c"/>
+  <path d="M3 32h58" stroke="#16233c" stroke-width="5"/>
+  <circle cx="32" cy="32" r="10" fill="#fff" stroke="#16233c" stroke-width="5"/>
+</svg>

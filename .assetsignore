@@ -1,0 +1,17 @@
+# 只影响「上传到 Cloudflare 的内容」，不影响本地、也不影响 Git。
+.git
+.gitignore
+.assetsignore
+.wrangler
+build
+docs
+scripts
+开源版             # 开源仓库的 README / LICENSE 模板，不属于站点内容
+README.md
+AGENTS.md
+*.command
+wrangler.jsonc
+.DS_Store
+__pycache__
+# ⚠️ 千万别写 *.txt —— 会连带排除掉 robots.txt、llms.txt 和站长平台给的
+#    xxxx.txt 验证文件，验证和收录会一起坏掉。本地笔记按文件名单独列。

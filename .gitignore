@@ -1,0 +1,42 @@
+# 上游数据缓存（build/取数据.py 下载，约 130MB）
+build/_raw/
+# 生成过程中的中间数据与本地构建状态
+build/_out/
+build/.生成状态.json
+
+# Python
+__pycache__/
+*.pyc
+
+# Cloudflare
+.wrangler/
+
+# 系统
+.DS_Store
+
+# ---------------------------------------------------------------------------
+# 下面全是**生成物**：跑一遍 build/生成页面.py 就会出来，不进版本管理。
+# 本仓库只收代码 —— 想要一份能直接看的成品，请用在线版 pokedex.suilang.net。
+# （站长自己那个私有仓库是会提交生成物的，为了「拉下来就能部署」，
+#   两边策略不一样，这里按第三方 clone 下来自己构建的用法来。）
+# ---------------------------------------------------------------------------
+/index.html
+/404.html
+/about.html
+/privacy.html
+/terms.html
+/dmca.html
+/sitemap.xml
+/llms.txt
+/robots.txt
+/data/
+/img/
+/og/
+/icons/
+/embed/
+/pokemon/
+/moves/
+/abilities/
+/items/
+/natures/
+/search/

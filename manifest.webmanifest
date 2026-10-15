@@ -1,0 +1,14 @@
+{
+  "name": "究极宝可梦图鉴",
+  "short_name": "究极图鉴",
+  "description": "1025 只宝可梦、937 个招式、374 个特性的中文资料库，支持拼音查询",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#1f7a63",
+  "icons": [
+    { "src": "/favicon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" },
+    { "src": "/icons/icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "/icons/icon-512.png", "sizes": "512x512", "type": "image/png" }
+  ]
+}
