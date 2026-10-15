@@ -1,0 +1,76 @@
+name: 代码有问题
+description: 生成脚本、页面模板、样式、交互出了 bug
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        报 bug 前先看一眼下面「不是这里的问题」，能省掉一轮来回。
+
+  - type: markdown
+    attributes:
+      value: |
+        ### 先说结论：数据错了不要在这里提
+
+        本站的数据来自 [PokeAPI](https://pokeapi.co/) 的公开快照。如果你在**在线版**
+        看到某只宝可梦的属性、种族值、进化条件或中文说明不对，那是数据源的问题，
+        请去在线版页面底部的反馈邮箱或 <https://suilang.net/> 反馈，不要在这里开 issue ——
+        那个仓库改不了上游数据。这里只管**代码**。
+
+  - type: input
+    id: what-happened
+    attributes:
+      label: 出了什么问题
+      description: 一句话说清楚现象。报错就把报错原文贴上来。
+      placeholder: "跑 build/生成页面.py 时报 KeyError: 'flavor_text'"
+    validations:
+      required: true
+
+  - type: textarea
+    id: steps
+    attributes:
+      label: 怎么复现
+      description: 从哪一步开始、跑了什么命令、期望看到什么、实际看到什么。
+      placeholder: |
+        1. python3 build/取数据.py   ← 正常
+        2. python3 build/生成数据.py ← 正常
+        3. python3 build/生成页面.py ← 报错，见上
+    validations:
+      required: true
+
+  - type: dropdown
+    id: where
+    attributes:
+      label: 问题出在哪一步
+      multiple: true
+      options:
+        - build/取数据.py（下载上游数据）
+        - build/取官方文本.py（补官方中文说明）
+        - build/图片.py（图片处理）
+        - build/生成数据.py（CSV → JSON）
+        - build/生成页面.py（生成静态页）
+        - build/自测.py（自测本身）
+        - 页面显示（样式 / HTML 结构）
+        - 搜索或筛选交互（assets/app.js）
+        - 部署到 Cloudflare（wrangler）
+        - 不确定
+    validations:
+      required: true
+
+  - type: textarea
+    id: environment
+    attributes:
+      label: 环境
+      description: 操作系统、Python 版本、Node 版本。报错和「环境不对」经常长得一样。
+      placeholder: |
+        macOS 15.3
+        Python 3.11.7
+        Node 20.11
+      render: text
+
+  - type: textarea
+    id: extra
+    attributes:
+      label: 其它信息
+      description: 截图、控制台报错、相关链接。选填。
+    render: text

@@ -1,0 +1,67 @@
+name: 自测
+
+# 这个仓库没有单元测试，只有一个「把整站重新生成一遍再逐条断言」的 build/自测.py。
+# 它是唯一能证明改动没弄坏东西的东西，所以每次推送和每个 PR 都跑一遍。
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  selftest:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      # build/生成页面.py 是用 node 读 assets/config.js 的，没 node 会退回默认值
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: 装依赖
+        run: python3 -m pip install --upgrade Pillow certifi
+
+      # 上游数据约 130MB，缓存下来就不用每次重下。
+      # key 跟着取数据脚本走：脚本里改了要下的文件清单，缓存自然失效。
+      - name: 恢复上游数据缓存
+        uses: actions/cache@v4
+        with:
+          path: build/_raw
+          key: raw-${{ hashFiles('build/取数据.py') }}
+          restore-keys: raw-
+
+      - name: 取上游数据
+        run: python3 build/取数据.py
+
+      - name: 处理图片
+        run: python3 build/图片.py
+
+      - name: 生成数据
+        run: python3 build/生成数据.py
+
+      - name: 生成页面
+        run: python3 build/生成页面.py
+
+      - name: 自测
+        run: python3 build/自测.py
+
+      # 图片处理那一步偶尔会因为上游临时抽风而失败，重试一次再判失败
+      - name: 上传失败时的现场
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: 自测现场
+          path: |
+            build/_out/
+            data/
+            sitemap.xml
+          retention-days: 3
+          if-no-files-found: ignore

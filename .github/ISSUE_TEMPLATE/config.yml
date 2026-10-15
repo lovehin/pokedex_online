@@ -1,0 +1,11 @@
+blank_issues_enabled: false
+contact_links:
+  - name: 数据有错（属性 / 种族值 / 中文说明不对）
+    url: https://suilang.net/
+    about: |
+      数据来自 PokeAPI 的公开快照，这个仓库改不了上游。请去在线版反馈，
+      我在那边处理。提 issue 只会卡在这儿。
+
+  - name: 在线版打不开 / 页面显示异常
+    url: https://pokedex.suilang.net/
+    about: 先确认一下是不是只有你打不开，再反馈。

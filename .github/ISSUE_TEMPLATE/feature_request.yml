@@ -1,0 +1,48 @@
+name: 功能建议
+description: 想加新栏目、新能力，或者觉得某处别扭
+labels: ["enhancement"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        欢迎提，但先看一眼**已经计划过但还没做的**，免得重复讨论：
+        对比页、伤害计算器、队伍编辑、按世代的筛选。
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: 你想解决什么问题
+      description: 先说场景，再说功能。「查进化链要开三个页面」比「加个对比功能」更好讨论。
+      placeholder: 我想对比两只宝可梦的种族值，现在得分别打开两个页面，脑子记不住
+    validations:
+      required: true
+
+  - type: textarea
+    id: proposal
+    attributes:
+      label: 你想到的做法
+      description: 哪怕只是个粗糙的想法也行，写下来才好讨论。
+    validations:
+      required: true
+
+  - type: dropdown
+    id: scope
+    attributes:
+      label: 大概要动到哪些地方
+      description: 只是帮你判断改动量，选最接近的就行。
+      multiple: true
+      options:
+        - 只改文案 / 样式（assets/style.css）
+        - 只改交互（assets/app.js）
+        - 加一个生成脚本
+        - 改 build/模板.py 的页面结构
+        - 改 build/映射表.py 的人工规则
+        - 加一整类新数据（要动取数据和生成数据）
+        - 不清楚
+      multiple: true
+
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: 你考虑过但不太行的办法
+      description: 选填。知道什么方案试过，能省很多来回。
