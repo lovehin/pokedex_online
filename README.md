@@ -107,6 +107,7 @@ pokedex_online/
 代码（`build/`、`assets/`、`scripts/`、部署配置）以 MIT 协议开源，见 `LICENSE`。
 **数据、精灵图、官方游戏文本不在授权范围内**，本仓库不包含、也不分发它们。
 运行时它们由 `build/取数据.py` 从上游直接下载，各上游的条款由使用者自行承担。
+逐条清单见 [`NOTICE.md`](NOTICE.md)。
 
 | 素材 | 来源 | 授权情况 |
 | --- | --- | --- |
@@ -203,5 +204,5 @@ python3 build/自测.py                 # 只检查，不改文件
 
 ## License
 
-代码部分 MIT，见 [`LICENSE`](LICENSE)。数据、精灵图、官方游戏文本不在授权范围内，
-详见「数据与版权」。
+代码部分 MIT，见 [`LICENSE`](LICENSE)。数据、精灵图、官方游戏文本不在授权范围内 ——
+哪些算代码、哪些不算，以及商标声明，逐条列在 [`NOTICE.md`](NOTICE.md)。

@@ -19,24 +19,3 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
-
---------------------------------------------------------------------------
-
-本许可只覆盖「代码」，即本仓库里的：
-
-  · build/ 下的生成脚本
-  · assets/ 下的样式与前端脚本
-  · scripts/ 下的 .command
-  · wrangler.jsonc / _headers / _redirects / .assetsignore
-
-以下内容**不在授权范围内**，本仓库也不包含它们：
-
-  · 宝可梦精灵图、道具图标（来自 PokeAPI/sprites，该仓库未提供许可文件，
-    图片自游戏提取，权利归任天堂 / Creatures / GAME FREAK 所有）
-  · 官方游戏文本与其中文翻译
-  · 任何 ROM、游戏文件或相关密钥
-
-它们由 build/取数据.py 在运行时从上游下载。请自行遵守各上游的条款。
-
-宝可梦（Pokémon）及相关名称是任天堂的商标。本项目与任天堂、Creatures、
-GAME FREAK 没有任何从属或授权关系。
